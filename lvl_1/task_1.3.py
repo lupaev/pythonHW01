@@ -15,3 +15,17 @@
 
     # Введите номер месяца: 15
     # Такого месяца нет!
+import calendar
+import datetime
+
+current_year = datetime.datetime.now().year
+months = ["январь" ,"февраль", "март", "апрель" ,"май" ,"июнь" , "июль", "август", "сентябрь", "октябрь", "ноябрь", "декабрь"]
+month_number = int(input('Введите номер месяца: '))
+
+try:
+  print(f'Вы ввели: {months[month_number - 1]}. {calendar.monthrange(current_year, month_number)[1]} день/дней в месяце')
+except IndexError:
+  print("Такого месяца нет!")
+
+
+
