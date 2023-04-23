@@ -1,5 +1,8 @@
-# Задача 1.2.
+import random
+import datetime
+import time
 
+# Задача 1.2.
 # Пункт A. 
 # Приведем плейлист песен в виде списка списков
 # Список my_favorite_songs содержит список названий и длительности каждого трека
@@ -17,7 +20,8 @@ my_favorite_songs = [
     ['Nowhere to Run', 2.58],
     ['In This World', 4.02],
 ]
-import random
+
+
 list = random.sample(my_favorite_songs, 3)
 s = []
 for x in list:
@@ -47,28 +51,26 @@ for key, value in my_favorite_songs_dict.items():
 random_time = random.sample(time, 3)
 print(f'Три песни звучат {sum(random_time)} минут')
 
-
 # Дополнительно для пунктов A и B
 # Пункт C.
 # Сгенерируйте случайные песни с помощью модуля random
 # import random
 
-#A
+# A
 list_song = random.sample(my_favorite_songs, 3)
 list_song = []
 for x in list:
     list_song.append(x[0])
 print(list_song)
 
-#B
+# B
 list_song1 = []
 for key, value in my_favorite_songs_dict.items():
     list_song1.append(key)
 random_songs = random.sample(list_song1, 3)
 print(random_songs)
 
-
-# Дополнительно 
+# Дополнительно
 # Пункт D.
 # Переведите минуты и секунды в формат времени. Используйте модуль datetime 
 
