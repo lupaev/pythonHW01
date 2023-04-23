@@ -1,6 +1,36 @@
 import random
-import datetime
 import time
+
+def convert_to_sec(list) -> int:
+    new_s = []
+    for el in list:
+        number = '{:.2f}'.format(el)
+        new_s.append(str(number)) #получен список строк со временем
+
+    new_str_list = []
+    for el in new_s:
+        new_str_list.extend(el.split("."))  # разделение на минуты и секунды и
+        # создание одного списка
+    m = []
+    s = []
+    for index in range(len(new_str_list)):
+        if index % 2 == 0:
+            m.append(new_str_list[
+                         index])  # выделение минут из общего списка в отдельный
+        else:
+            s.append(new_str_list[
+                         index])  # выделение секунд из общего списка в отдельный
+    m1 = []
+    for el in m:
+        m1.append(int(el) * 60)
+    s1 = []
+    for el in s:
+        s1.append(int(el))
+    return sum(m1) + sum(s1) #сложение секунд
+
+
+def conver_sec_to_time(sec: int) -> str:
+    return time.strftime('%M:%S', time.gmtime(sec))
 
 # Задача 1.2.
 # Пункт A. 
@@ -26,7 +56,7 @@ list = random.sample(my_favorite_songs, 3)
 s = []
 for x in list:
     s.append(x[-1])
-print(f'Три песни звучат {sum(s)} минут')
+print(f'Три песни звучат {conver_sec_to_time(convert_to_sec(s))} минут')
 
 # Пункт B.
 # Есть словарь песен 
@@ -45,11 +75,12 @@ my_favorite_songs_dict = {
     'In This World': 4.02,
 }
 
-time = []
+t = []
 for key, value in my_favorite_songs_dict.items():
-    time.append(value)
-random_time = random.sample(time, 3)
-print(f'Три песни звучат {sum(random_time)} минут')
+    t.append(value)
+random_t = random.sample(t, 3)
+
+print(f'Три песни звучат {conver_sec_to_time(convert_to_sec(random_t))} минут')
 
 # Дополнительно для пунктов A и B
 # Пункт C.
@@ -73,4 +104,10 @@ print(random_songs)
 # Дополнительно
 # Пункт D.
 # Переведите минуты и секунды в формат времени. Используйте модуль datetime 
+
+
+
+
+
+
 
