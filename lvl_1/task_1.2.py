@@ -85,10 +85,8 @@ my_favorite_songs_dict = {
     'In This World': 4.02,
 }
 
-t = []
-for key, value in my_favorite_songs_dict.items():
-    t.append(value)
-random_t = random.sample(t, 3)
+random_t = random.sample(list(my_favorite_songs_dict.values()), 3)
+
 
 print(f'Три песни звучат {conver_sec_to_time(convert_to_sec(random_t))} минут')
 
@@ -105,10 +103,7 @@ for x in list_song_random:
 print(list_song2)
 
 # B
-list_song1 = []
-for key, value in my_favorite_songs_dict.items():
-    list_song1.append(key)
-random_songs = random.sample(list_song1, 3)
+random_songs = random.sample(list(my_favorite_songs_dict.keys()), 3)
 print(random_songs)
 
 # Дополнительно
