@@ -1,7 +1,13 @@
 import random
 import time
+import datetime
 
 def convert_to_sec(list) -> int:
+    '''Функция конвертирования списка чисел тип float в целое число,
+    преобразование в секунды.
+    Параметры функции - float = []
+    Результат функции - целое число тип int
+    '''
     new_s = []
     for el in list:
         number = '{:.2f}'.format(el)
@@ -30,6 +36,10 @@ def convert_to_sec(list) -> int:
 
 
 def conver_sec_to_time(sec: int) -> str:
+    '''Функция преобразование секунд в строку в формат времени.
+    Параметры функции - целое число тип int
+    Результат функции - строка тип str
+    '''
     return time.strftime('%M:%S', time.gmtime(sec))
 
 # Задача 1.2.
@@ -52,9 +62,9 @@ my_favorite_songs = [
 ]
 
 
-list = random.sample(my_favorite_songs, 3)
+list_song = random.sample(my_favorite_songs, 3)
 s = []
-for x in list:
+for x in list_song:
     s.append(x[-1])
 print(f'Три песни звучат {conver_sec_to_time(convert_to_sec(s))} минут')
 
@@ -88,11 +98,11 @@ print(f'Три песни звучат {conver_sec_to_time(convert_to_sec(random
 # import random
 
 # A
-list_song = random.sample(my_favorite_songs, 3)
-list_song = []
-for x in list:
-    list_song.append(x[0])
-print(list_song)
+list_song_random = random.sample(my_favorite_songs, 3)
+list_song2 = []
+for x in list_song_random:
+    list_song2.append(x[0])
+print(list_song2)
 
 # B
 list_song1 = []
@@ -105,8 +115,8 @@ print(random_songs)
 # Пункт D.
 # Переведите минуты и секунды в формат времени. Используйте модуль datetime 
 
-
-
+date_now = datetime.datetime.now()
+print(date_now.strftime('%M minuts %S seconds'))
 
 
 
