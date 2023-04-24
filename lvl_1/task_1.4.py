@@ -30,3 +30,20 @@ store = {
 
 # Пример: "Кроссовки тип 3 (Adidas) - 31 шт, стоимость 50747 руб"
 
+
+for key, value in titles.items():
+    t_quantity = 0
+    t_cost = 0
+    for products in store[value]:
+        multiplier = products['quantity']
+        t_quantity += products['quantity']
+        t_cost += products['price'] * multiplier
+    print(key, " - ",t_quantity," шт, стоимость",t_cost," руб")
+
+
+# Кроссовки тип 3 (Adidas)  -  31  шт, стоимость 50747  руб
+# Мячик тип 2 (Adidas)  -  14  шт, стоимость 660  руб
+# Кепка тип 1 (Adidas)  -  60  шт, стоимость 17124  руб
+# Ремень тип 2 (Nike)  -  9  шт, стоимость 1930  руб
+# Футболка тип 1 (Adidas)  -  134  шт, стоимость 54264  руб
+# Шапка тип 5 (Puma)  -  26  шт, стоимость 4550  руб
