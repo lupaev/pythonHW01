@@ -15,3 +15,5 @@ print(my_favorite_songs[:14], my_favorite_songs[-13:], my_favorite_songs[16:23] 
 my_favorite_songs = my_favorite_songs.replace("'", '').split(', ')
 print(my_favorite_songs[0], my_favorite_songs[-1], my_favorite_songs[1], my_favorite_songs[-2])
 # Вывод: Waste a Moment  New Salvation Staying Alive Start Me Up
+
+# Отлично!
