@@ -18,3 +18,7 @@ def quarter_of(month):
     else:
         return "Такого месяца нет"
 
+# Да, вот вариант покороче
+def quarter_of(month):
+    q = {1: (1,3), 2:(4,6), 3:(7,9), 4:(10,12)}
+    return [k for k,v in q.items() if v[0] <= month <= v[1]][0]
