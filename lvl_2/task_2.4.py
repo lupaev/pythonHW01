@@ -50,4 +50,6 @@ def remove_word_with_one_em(s):
         elif el.find('!', 1, -1) > -1:
             new_s += el + ' '
 
-    print(new_s)
+    return print(new_s)
+
+
