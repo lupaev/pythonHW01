@@ -26,10 +26,8 @@
 #   - использовать готовые классы numpy.array() и pandas.DataFrame() запрещено!
 #   - проявите фантазию :)
 
-import random
 class Matrix:
-    row = None
-    number_index = None
+
 
     def __init__(self, row=10, number_index=10):
         self.matrix = [self.creat_matrix(number_index) for j in range(row)]
