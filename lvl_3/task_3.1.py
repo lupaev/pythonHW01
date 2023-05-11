@@ -36,15 +36,14 @@ class Matrix:
         self.print_matrix()
 
 
-    def creat_matrix(self, random_int):
+    def creat_matrix(self, number_index):
         a = 0
         b = 1
-        n = random_int
         m = [a, b]
-        while n > 2:
+        while number_index > 2:
             a, b = b, a + b
             m.append(b)
-            n -= 1
+            number_index -= 1
         return m
 
 
