@@ -32,8 +32,6 @@ class Matrix:
     number_index = None
 
     def __init__(self, row=10, number_index=10):
-        # self.row = row
-        # self.number_index = number_index
         self.matrix = [self.creat_matrix(number_index) for j in range(row)]
         self.print_matrix()
 
