@@ -76,7 +76,28 @@ def inf_student(id):
         print("Ошибка при выполнении запроса", error)
 
 
-create_db_table()
-data_for_db_table()
-inf_student(203)
+
+def inf_student1(id):
+    try:
+        connection = db_connect()
+        cursor = connection.cursor()
+        native_query = """select Students.Student_Id, Students.Student_Name, Students.School_Id, School.School_Name 
+        from Students, School where Students.School_Id = School.School_Id and Students.Student_Id = {};""".format(id)
+        cursor.execute(native_query)
+        print(f'Запрос о студенте id: {id}')
+        response = cursor.fetchall()
+        for row in response:
+            print("ID Студента: ", row[0])
+            print("Имя студента: ", row[1])
+            print("ID школы: ", row[2])
+            print("Название школы: ", row[3])
+        db_close(connection)
+    except (Exception, sqlite3.Error) as error:
+        print("Ошибка при выполнении запроса", error)
+
+
+# create_db_table()
+# data_for_db_table()
+# inf_student(203)
+inf_student1(203)
 
